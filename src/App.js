@@ -1,23 +1,25 @@
-import logo from './logo.svg';
+import SnackBar from './components/SnackBar/SnackBar';
+import Button from './components/Button/Button';
 import './App.css';
 
 function App() {
+
+  function toggleSnackBar() {
+    document.getElementById('my-snack-bar').classList.toggle('no-visible');
+  }
+
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <Button
+        onClick={toggleSnackBar}
+      >Executar ação</Button>
+      <SnackBar
+        text="Ação executada com sucesso"
+        button="Concluído"
+        type="attention"
+        id="my-snack-bar"
+        buttonFunction={toggleSnackBar}
+      />
     </div>
   );
 }
