@@ -6,9 +6,9 @@ function App() {
   return (
     <div className="App">
       <SnackBar
-        text="Ação executada com sucesso"
+        text="Ação concluída com êxito. Tente novamente maiss tarde"
         openButtonLabel="Executar ação"
-        snackBarButtonLabel="Concluído"
+        snackBarButtonLabel="Tente novamente"
         type="success"
         id="my-snack-bar"
         time={5000}
