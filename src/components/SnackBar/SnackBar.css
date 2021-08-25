@@ -1,10 +1,11 @@
 .snack-bar {
     visibility: hidden;
     display: flex;
+    align-items: center;
     flex-direction: row;
     flex-wrap: wrap;
     align-items: flex-start;
-    padding: 8px 16px;
+    padding: 0px 16px 8px;
 
     max-width: 325px;
     box-shadow: 
@@ -42,6 +43,20 @@
 @keyframes fadeout {
     from {bottom: 24px;}
     to {bottom: -100px;}
+}
+
+.color-bar {
+    background-color: black;
+    height: 3px;
+    width: 100%;
+    margin-left: auto;
+    margin-right: auto;
+    /* animation: close-color-bar 3s; */
+}
+
+@keyframes close-color-bar {
+    from {width: 100%}
+    to {width: 0%}
 }
 
 .content {

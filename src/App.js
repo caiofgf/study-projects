@@ -11,7 +11,7 @@ function App() {
         snackBarButtonLabel="Concluído"
         type="success"
         id="my-snack-bar"
-        time={3000}
+        time={5000}
       />
     </div>
   );
