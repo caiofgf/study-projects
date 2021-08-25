@@ -1,8 +1,30 @@
 import './SnackBar.css';
+import Button from '../Button/Button';
 
-const SnackBar = ({ text, button, type, id, buttonFunction }) => {
+const SnackBar = ({ text, snackBarButtonLabel, openButtonLabel, type, id, buttonFunction, time }) => {
+
+    function toggleSnackBar() {
+        let elem = document.getElementById('my-snack-bar');
+        elem.classList.add('visible');
+        setTimeout(() => elem.classList.remove('visible'), time);
+        elem.classList.add('close');
+        setTimeout(() => {elem.classList.remove('close')}, time + 500);
+    }
+
+    function closeSnackBar() {
+        let elem = document.getElementById('my-snack-bar');
+        elem.classList.remove('visible');
+        elem.classList.add('close');
+        setTimeout(() => {elem.classList.remove('close')}, 500);
+    }
+
+
     return (
-        <div className="snack-bar no-visible" id={id} >
+        <>
+        <Button
+            onClick={toggleSnackBar}
+        >{openButtonLabel}</Button>
+        <div className="snack-bar" id={id} >
             <div className="content">
                 <div className="icon">
                     {type === "error" && 
@@ -18,9 +40,10 @@ const SnackBar = ({ text, button, type, id, buttonFunction }) => {
                 <span>{text}</span>
             </div>
             <div className="button-div">
-                <button className="action-button" onClick={buttonFunction} >{button}</button>
+                <button className="action-button" onClick={closeSnackBar} >{snackBarButtonLabel}</button>
             </div>
         </div>
+        </>
     );
 };
 

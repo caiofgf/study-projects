@@ -1,4 +1,5 @@
 .snack-bar {
+    visibility: hidden;
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
@@ -16,11 +17,31 @@
     transform: translateX(-50%);
     right: auto;
     left: 50%;
-    bottom: 24px;
+    /* bottom: 24px; */
+    bottom: -100px;
+    /* animation: fadeout .5s 3.s; */
+    transition: bottom .5s;
 }
 
-.no-visible {
-    display: none !important;
+.visible {
+    visibility: visible !important;
+    bottom: 24px !important;
+    /* animation: fadein .5s, fadeout .5s 2.5s; */
+}
+
+.close {
+    visibility: visible !important;
+    /* animation: fadeout .5s !important; */
+}
+
+@keyframes fadein {
+    from {bottom: -100px;}
+    to {bottom: 24px;}
+}
+
+@keyframes fadeout {
+    from {bottom: 24px;}
+    to {bottom: -100px;}
 }
 
 .content {
