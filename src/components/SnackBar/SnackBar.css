@@ -15,9 +15,8 @@
     border-radius: 8px;
 
     position: fixed;
-    transform: translateX(-50%);
     right: auto;
-    left: 50%;
+    left: calc(50% - 162.5px);
     bottom: -100px;
     transition: bottom .5s;
 }
@@ -32,12 +31,12 @@
 }
 
 .visible {
-    visibility: visible !important;
-    bottom: 24px !important;
+    visibility: visible;
+    bottom: 24px;
 }
 
 .close {
-    visibility: visible !important;
+    visibility: visible;
 }
 
 .color-bar {
