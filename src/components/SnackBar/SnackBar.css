@@ -1,7 +1,6 @@
 .snack-bar {
     visibility: hidden;
     display: flex;
-    align-items: center;
     flex-direction: row;
     flex-wrap: wrap;
     align-items: flex-start;
@@ -35,7 +34,7 @@
     bottom: 24px;
 }
 
-.close {
+.closed {
     visibility: visible;
 }
 
