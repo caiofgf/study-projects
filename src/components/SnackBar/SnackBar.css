@@ -31,11 +31,10 @@
 
 .visible {
     visibility: visible;
-    bottom: 24px;
 }
 
-.closed {
-    visibility: visible;
+.up {
+    bottom: 24px;
 }
 
 .color-bar {

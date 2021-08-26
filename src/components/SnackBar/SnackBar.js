@@ -23,8 +23,7 @@ const SnackBar = ({ text, snackBarButtonLabel, type, id, time, open, onClose }) 
 
     useEffect(() => {
         if (open) {
-            setSnackBarClassName("visible");
-            console.log("inserting timeout");
+            setSnackBarClassName("visible up");
             timer.current = setTimeout(() => {
                 closeSnackBar();
             }, time);
@@ -32,7 +31,7 @@ const SnackBar = ({ text, snackBarButtonLabel, type, id, time, open, onClose }) 
     }, [open]);
     
     const closeSnackBar = () => {
-        setSnackBarClassName("closed");
+        setSnackBarClassName("visible");
         clearTimeout(timer.current);
         setTimeout(() => {
             setSnackBarClassName("");
@@ -42,8 +41,8 @@ const SnackBar = ({ text, snackBarButtonLabel, type, id, time, open, onClose }) 
 
     return (
         <div className={`snack-bar ${snackBarClassName}`} id={id} >
-            <div className={"color-bar"} id="color-bar" style={{backgroundColor: types[type].color, animation: open ? `close-color-bar ${time/1000}s .5s` : ""}}></div>
-            <div className="container">
+            <div className="color-bar" id="color-bar" style={{backgroundColor: types[type].color, animation: open ? `close-color-bar ${time/1000}s .5s` : ""}}></div>
+            <div className="container"> 
                 <div className="content">
                     <div className="icon">
                         {types[type].icon()}

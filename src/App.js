@@ -14,9 +14,9 @@ function App() {
             onClick={openSnackBar}
         >Executar ação</Button>
       <SnackBar
-        text="Ação concluída com êxito. Tente novamente maiss tarde"
-        snackBarButtonLabel="Tente novamente"
-        type="success"
+        text="Sistema indisponível. Tente novamente mais tarde"
+        snackBarButtonLabel="OK"
+        type="error"
         id="my-snack-bar"
         time={5000}
         open={snackBarState}
