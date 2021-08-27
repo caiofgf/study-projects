@@ -17,9 +17,9 @@ function App() {
       <SnackBar
         text="Sistema indisponível. Tente de novo"
         snackBarButtonLabel="OK"
-        type="error"
+        type="success"
         id="my-snack-bar"
-        time={500000}
+        time={5000}
         open={snackBarState}
         onClose={() => setSnackBarState(false)}
       />
