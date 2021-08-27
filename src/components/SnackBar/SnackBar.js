@@ -1,4 +1,5 @@
 import { useEffect, useRef, useState } from 'react';
+import Button from '../Button/Button';
 import './SnackBar.css';
 
 const SnackBar = ({ text, snackBarButtonLabel, type, id, time, open, onClose }) => {
@@ -50,7 +51,10 @@ const SnackBar = ({ text, snackBarButtonLabel, type, id, time, open, onClose }) 
                     <span>{text}</span>
                 </div>
                 <div className="button-div">
-                    <button className="action-button" onClick={closeSnackBar} >{snackBarButtonLabel}</button>
+                    <Button
+                        type="secundary"
+                        onClick={closeSnackBar}
+                    >{snackBarButtonLabel}</Button>
                 </div>
             </div>
         </div>

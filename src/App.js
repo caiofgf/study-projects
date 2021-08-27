@@ -11,14 +11,15 @@ function App() {
   return (
     <div className="App">
       <Button
+            type="primary"
             onClick={openSnackBar}
         >Executar ação</Button>
       <SnackBar
-        text="Sistema indisponível. Tente novamente mais tarde"
+        text="Sistema indisponível. Tente de novo"
         snackBarButtonLabel="OK"
         type="error"
         id="my-snack-bar"
-        time={5000}
+        time={500000}
         open={snackBarState}
         onClose={() => setSnackBarState(false)}
       />
