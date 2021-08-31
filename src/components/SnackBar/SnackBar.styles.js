@@ -12,23 +12,23 @@ const types = {
     }
 }
 
-const openEffect = keyframes`
+const openEffectKeyframe = keyframes`
     from {bottom: -100px}
     to {bottom: 28px}
 `;
 
-const closeEffect = keyframes`
+const closeEffectKeyframe = keyframes`
     from {bottom: 28px}
     to {bottom: -100px}
 `;
 
-const applyOpeningEffect = (time) => css`
-    ${openEffect} .5s, ${closeEffect} .5s ${time}ms
+const openingEffect = (time) => css`
+    ${openEffectKeyframe} .5s, ${closeEffectKeyframe} .5s ${time}ms
 `;
 
-const applyClosingEffect = () => css`
-    ${closeEffect} .5s
-`
+const closingEffect = css`
+    ${closeEffectKeyframe} .5s
+`;
 
 const SnackBar = styled.div`
     visibility: ${props => (props.state !== "hidden" ? 'visible' : 'hidden')};
@@ -43,7 +43,7 @@ const SnackBar = styled.div`
     border-radius: 8px;
     position: fixed;
     left: calc(50% - 162.5px);
-    animation: ${props => (props.state === "show" && applyOpeningEffect(props.time)) || (props.state === 'closing' && applyClosingEffect())};
+    animation: ${props => (props.state === "show" && openingEffect(props.time)) || (props.state === 'closing' && closingEffect)};
     bottom: ${props=> props.state === "show" ? '28px' : '-100px'};
 `; 
 
@@ -61,7 +61,7 @@ const ColorBar = styled.div`
     width: 100%;
     margin: 0 auto;
     background-color: ${props => types[props.type].color};
-    animation: ${props => (props.open ? colorBarEffect(props.time) : '')}
+    animation: ${props => (props.open ? colorBarEffect(props.time) : '')};
 `;
 
 const Container = styled.div`

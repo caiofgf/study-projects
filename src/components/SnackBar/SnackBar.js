@@ -12,7 +12,6 @@ const SnackBar = ({ text, snackBarButtonLabel, type, id, time, open, onClose }) 
     useEffect(() => {
         if (open) {
             setShowingState("show");
-            /* setSnackBarShow(true); */
             timer.current = setTimeout(() => {
                 clearTimeout(timer.current);
                 setShowingState("hidden");
@@ -22,13 +21,12 @@ const SnackBar = ({ text, snackBarButtonLabel, type, id, time, open, onClose }) 
     }, [open]);
     
     const closeSnackBar = () => {
-        /* setSnackBarShow(false); */
         setShowingState("closing");
         clearTimeout(timer.current);
         setTimeout(() => {
             onClose();
             setShowingState("hidden");
-        }, 50000);
+        }, 500);
     }
 
     return (
