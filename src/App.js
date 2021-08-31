@@ -19,7 +19,7 @@ function App() {
         snackBarButtonLabel="OK"
         type="success"
         id="my-snack-bar"
-        time={5000}
+        time={50000}
         open={snackBarState}
         onClose={() => setSnackBarState(false)}
       />
