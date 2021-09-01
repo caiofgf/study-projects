@@ -26,10 +26,6 @@ const openingEffect = (time) => css`
     ${openEffectKeyframe} .5s, ${closeEffectKeyframe} .5s ${time}ms
 `;
 
-const closingEffect = css`
-    ${closeEffectKeyframe} .5s
-`;
-
 const SnackBar = styled.div`
     visibility: ${props => (props.state !== "hidden" ? 'visible' : 'hidden')};
     display: flex;
@@ -43,7 +39,8 @@ const SnackBar = styled.div`
     border-radius: 8px;
     position: fixed;
     left: calc(50% - 162.5px);
-    animation: ${props => (props.state === "show" && openingEffect(props.time)) || (props.state === 'closing' && closingEffect)};
+    animation: ${props => (props.state === "show" && openingEffect(props.time))};
+    transition: ${props => (props.state === "closing" && 'bottom .5s')};
     bottom: ${props=> props.state === "show" ? '28px' : '-100px'};
 `; 
 
